@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>Rojas Auto Corporation</title>
+</head>
+<body>
+<p>Justin Rojas [Student ID: 916195085] [Date: 11/1/17] [Class :RUBY WRKSHP] [Proffesor: Heng Yi M.Chu] </p>    
+<h1>Welcome to Rojas AUTO Corp! </h1>
+<p>Here you will find you dream car at amazing prices!</p>
+<p>Carfax included with every car!</p>
+<p>check our latest tweets!</p>
+<%client = Twitter::REST::Client.new do |config| %>
+  <%config.consumer_key        = "f658nyx3MNxkU2ZNrcnUXBG4d" %>
+  <%config.consumer_secret     = "uxxL2BkKohmeo0KgkyCYO7SEaDpHTHKyJOiAvPG0fd8hUik7FX"%>
+  <%config.access_token        = "781166555266682880-2ktH5A9SqbHSkpsZUWec43oJNtCfOyF"%>
+  <%config.access_token_secret = "ejpL2D7GX3K8f9AI8Q633VBKodFy2bC4sQ73Xj9bpaajP"%>
+<%end%>
+<div id="testimonies">
+<% client.search("Ferrari Investment").take(10).each do |tweet| %>
+  <blockquate><%= tweet.text %></blockquate>
+<div class= "from">&mdash; @<%= tweet.user.screen_name %> </div>
+<%end%>
+</div>
+</body>
+</html>
+
+
+<%=link_to 'About',pages_about_path %>

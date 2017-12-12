@@ -1,0 +1,71 @@
+<h1>GET READY TO GET YOUR MIND BLOWN!!!!</h1>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Here we offer some of the finest selections at unbeatable prices! </title>
+</head>
+<body>
+<h2>Here we offer some of the finest selections at unbeatable prices!</h2>
+<p1>No Credit? No Problem! We accept all financing!</p1>
+
+<h3>Automobile Catagory</h3>
+<ul>
+  <li>Toyota(2018 All Models- $25,0000)</li>
+  <li>Honda(2018 All Models- $25,0000)</li>
+  <li>Porche(2018 All Models- $35,0000)</li>
+  <li>Mercedes-Benz(2018 All Models- $35,0000)</li>
+  <li>Maserati(2018 All Models- $40,0000)</li>
+  <li>McLaren(2018 All Models- $40,0000)</li>
+  <li>Aston Marton(2018 All Models- $40,0000)</li>
+  <li>Acura(2018 All Models- $25,0000)</li>
+  <li>Alfa Romeo(2018 All Models- $40,0000)</li>
+  <li>Audi(2018 All Models- 30,0000)</li>
+  <li>Bentley(2018 All Models- $40,0000)</li>
+  <li>BMW(2018 All Models- $30,0000)</li>
+  <li>Jeep(2018 All Models- $30,0000)</li>
+  <li>Ferrari(2018 All Models- $40,0000)</li>
+  <li>Rolls Royce(2018 All Models- $40,0000)</li>
+  <li>Nissan(2018 All Models- $25,0000)</li>
+  <li>Buick(2018 All Models- $30,0000)</li>
+  <li>Cadillac(2018 All Models- $25,0000)</li>
+  <li>Cheverolet(2018 All Models- $25,0000)</li>
+  <li>Chrysler(2018 All Models- $25,0000)</li>	
+  <li>Dodge(2018 All Models- $25,0000)</li>
+  <li>Fiat(2018 All Models- $20,0000)</li>
+  <li>Ford(2018 All Models- $20,0000)</li>
+  <li>Genesis(2018 All Models- $25,0000)</li>
+  <li>GMC(2018 All Models- $25,0000)</li>
+  <li>Hyundai(2018 All Models- $25,0000)</li>
+  <li>INFINITI(2018 All Models- $30,0000)</li>
+  <li>Jaguar(2018 All Models- $30,0000)</li>
+  <li>Kia(2018 All Models- $25,0000)</li>
+  <li>Lamborigini(2018 All Models- $40,0000)</li>
+  <li>Land Rover(2018 All Models- $30,0000)</li>
+  <li>Lexus(2018 All Models- $25,0000)</li>
+  <li>Lincoln(2018 All Models- $30,0000)</li>
+  <li>Lotus(2018 All Models- $30,0000)</li>
+  <li>Mazda(2018 All Models- $25,0000)</li>
+  <li>MINI(2018 All Models- $25,0000)</li>
+  <li>Mitsubishi(2018 All Models- $25,0000)</li>
+  <li>Ram(2018 All Models- $25,0000)</li>
+  <li>smart(2018 All Models- 20$)</li>
+  <li>Subaru(2018 All Models- $25,0000)</li>
+  <li>Volkswagen(2018 All Models- $25,0000)</li>
+  <li>Volvo(2018 All Models- $30,0000)</li>
+  <li>Zonda(2018 All Models- $40,0000)</li>
+</ul>  
+</body>
+</html>
+<%client = Twitter::REST::Client.new do |config| %>
+  <%config.consumer_key        = "f658nyx3MNxkU2ZNrcnUXBG4d" %>
+  <%config.consumer_secret     = "uxxL2BkKohmeo0KgkyCYO7SEaDpHTHKyJOiAvPG0fd8hUik7FX"%>
+  <%config.access_token        = "781166555266682880-2ktH5A9SqbHSkpsZUWec43oJNtCfOyF"%>
+  <%config.access_token_secret = "ejpL2D7GX3K8f9AI8Q633VBKodFy2bC4sQ73Xj9bpaajP"%>
+<%end%>
+<div id="testimonies">
+<% client.search("Ferrari Investment").take(3).each do |tweet| %>
+  <blockquate><%= tweet.text %></blockquate>
+<div class= "from">&mdash; @<%= tweet.user.screen_name %> </div>
+<%end%>
+</div>
+<%=link_to 'Home',pages_home_path %>
